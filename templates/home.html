@@ -1,0 +1,149 @@
+<!-- index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'patient/style.css' %}">
+    <title>Hospital Management system</title>
+</head>
+<body>
+
+<div align="center">
+    <h2>Hospital Management system</h2>
+</div>
+
+<div class="container">
+    <form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        <div class="button-container">
+            <a href="addpatient" class="button-link">
+                <button type="button">Click to add Patients</button>
+            </a>
+            <br>
+            <a href="displaypatients" class="button-link">
+                <button type="button">Click to display patients</button>
+            </a>
+            <br>
+            <a href="addhospital" class="button-link">
+                <button type="button">Click to add Hospitals</button>
+            </a>
+            <br>
+            <a href="displayhospitals" class="button-link">
+                <button type="button">Click to display hospitals</button>
+            </a>
+            <a href="input" class="button-link">
+                <button type="button">Click to search patient status</button>
+            </a>
+            <a href="input2" class="button-link">
+                <button type="button">Click to view all details of patient</button>
+            </a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        a {
+            margin: 100px 100px;
+            padding: 10px;
+        }
+        button{
+            margin: 10px auto;
+        }
+        .container {
+            border: 2px solid #dedede;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .darker {
+            border-color: #ccc;
+            background-color: #ddd;
+        }
+
+        .container::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .container img {
+            float: left;
+            max-width: 60px;
+            width: 100%;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        .container img.right {
+            float: right;
+            margin-left: 20px;
+            margin-right:0;
+        }
+
+        .time-right {
+            float: right;
+            color: #aaa;
+        }
+
+        .time-left {
+            float: left;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+<div align="center">
+    <h2>Hospital Management System</h2>
+</div>
+
+
+    <div class="container">
+        <form id="post-form" method="POST" action="checkview">
+            {% csrf_token %}
+            <div class="button-container">
+                <a href="addpatient" class="button-link">
+                    <button type="button">Click to add Patients</button>
+                </a>
+                <br>
+                <a href="displaypatients" class="button-link">
+                    <button type="button">Click to display patients</button>
+                </a>
+                <br>
+                <a href="addhospital" class="button-link">
+                    <button type="button">Click to add Hospitals</button>
+                </a>
+                <br>
+                <a href="displayhospitals" class="button-link">
+                    <button type="button">Click to display hospitals</button>
+                </a>
+                <br>
+                <a href="input" class="button-link">
+                    <button type="button">Click to search patient status</button>
+                </a>
+                <br>
+                <a href="input2" class="button-link">
+                    <button type="button">Click to view all details of patient</button>
+                </a>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Patient</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            border: 2px solid #dedede;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #00506b;
+        }
+    </style>
+</head>
+<body>
+
+<div align="center">
+    <h2>Add Patient</h2>
+</div>
+
+<form id="post-form" method="POST" action="{% url 'addpatient' %}">
+    {% csrf_token %}
+
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="hospital">Hospital</label>
+    <select name="hospital" id="hospital" required>
+        <!-- Assuming you have a list of hospitals available -->
+        {% for hospital in hospitals %}
+            <option value="{{ hospital.id }}">{{ hospital.hname }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="disease">Disease</label>
+    <input type="text" name="disease" id="disease" required>
+
+    <label for="doctor_name">Doctor Name</label>
+    <input type="text" name="doctor_name" id="doctor_name" required>
+
+    <label for="status">Status</label>
+    <select name="status" id="status" required>
+        <option value="primary_check">Primary Check</option>
+        <option value="consultation">Consultation</option>
+        <option value="discharged">Discharged</option>
+        <option value="admitted">Admitted</option>
+        <option value="referred">Referred</option>
+    </select>
+
+    <label for="medication_remarks">Medication Remarks</label>
+    <textarea name="medication_remarks" id="medication_remarks" rows="4" cols="50"></textarea>
+
+    <input type="submit" value="Enter">
+</form>
+
+<a href="/">
+    <button type="button">Go to Home</button>
+</a>
+
+</body>
+</html>

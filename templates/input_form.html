@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Information</title>
+    {% load static %}
+</head>
+<body>
+    <h2>Enter Your Name:</h2>
+    <form method="post" action="{% url 'patient_info' %}">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
