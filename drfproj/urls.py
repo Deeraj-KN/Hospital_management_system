@@ -9,8 +9,11 @@ urlpatterns = [
     path('api-auth/',include('rest_framework.urls')),
     #path('',TesView.as_view(),name='test'),
     path('api/token',obtain_auth_token,name='obtain'),
-   
-    path('', include('patient.urls')),
+    
+    
+    path('', include('authenticate.urls')),
+    path('patient/', include('patient.urls')),
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -66,11 +66,14 @@
 
         <label for="hospital">Address:{{ hospital.address }}</label>
         <p></p>
-
+        {% for department in hospital.department.all %}
+        <label for="department">Department:{{ department.dname }}</label>
+        <p></p>
+        {% endfor %}
         
     </div>
 {% endfor %}
-<a href="/">
+<a href="/patient">
   <button type="button">Go to Home</button>
 </a>
 </body>

@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_framework_simplejwt',
     'patient',
     'drfapp',
     
@@ -82,8 +81,12 @@ WSGI_APPLICATION = 'drfproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hospital',
+        'USER': 'root',           # Replace with your database user
+        'PASSWORD': '',   # Replace with your database password
+        'HOST': 'localhost',                    # Replace with your database host
+        'PORT': '3306',
     }
 }
 
@@ -132,7 +135,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # settings.py
 REST_FRAMEWORK = {
   'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        #'rest_framework_simplejwt.authentication.JWTAuthentication',
         # Add other authentication classes if needed...
     ),
 }

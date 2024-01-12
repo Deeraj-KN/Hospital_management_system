@@ -67,20 +67,22 @@
         <label for="hospital">Hospital:{{ patient.hospital.hname }}</label>
         <p></p>
 
-        <label for="disease">Disease:{{ patient.disease }}</label>
-        <p></p>
+        <!-- <label for="disease">Disease:{{ patient.disease }}</label>
+        <p></p> -->
 
         <label for="doctor_name">Doctor Name:{{ patient.doctor_name }}</label>
         <p></p>
 
         <label for="status">Status:{{ patient.get_status_display }}</label>
         <p></p>
-
-        <label for="medication_remarks">Medication Remarks:{{ patient.medication_remarks }}</label>
+        <label for="status">Status:{{ patient.ph_number }}</label>
         <p></p>
+
+        <!-- <label for="medication_remarks">Medication Remarks:{{ patient.medication_remarks }}</label>
+        <p></p> -->
     </div>
 {% endfor %}
-<a href="/">
+<a href="/patient">
   <button type="button">Go to Home</button>
 </a>
 </body>

@@ -87,8 +87,8 @@
         {% endfor %}
     </select>
 
-    <label for="disease">Disease</label>
-    <input type="text" name="disease" id="disease" required>
+    <!-- <label for="disease">Disease</label>
+    <input type="text" name="disease" id="disease" required> -->
 
     <label for="doctor_name">Doctor Name</label>
     <input type="text" name="doctor_name" id="doctor_name" required>
@@ -102,13 +102,17 @@
         <option value="referred">Referred</option>
     </select>
 
-    <label for="medication_remarks">Medication Remarks</label>
-    <textarea name="medication_remarks" id="medication_remarks" rows="4" cols="50"></textarea>
+    <!-- <label for="medication_remarks">Medication Remarks</label>
+    <textarea name="medication_remarks" id="medication_remarks" rows="4" cols="50"></textarea> -->
+    <label for="dob">Date of birth</label>
+    <input type="date" name="dob" id="dob" required>
+    <label for="ph_number">Phone Number</label>
+    <input type="text" name="ph_number" id="ph_number" required>
 
     <input type="submit" value="Enter">
 </form>
 
-<a href="/">
+<a href="/patient">
     <button type="button">Go to Home</button>
 </a>
 
