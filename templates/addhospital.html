@@ -70,7 +70,7 @@
 <body>
 
 <div align="center">
-    <h2>Add Patient</h2>
+    <h2>Add Hospital</h2>
 </div>
 
 <form id="post-form" method="POST" action="addhospital">
@@ -81,12 +81,20 @@
 
     <label for="hospital">Address Of Hospital</label>
     <input type="text" name="address" id="address" required>
+    <!-- <label for="department">Department</label>
+    <input type="text" name="department" id="department" required> -->
+    <label for="dep">Departments</label>
+    <select name="department" id="department" required multiple>
+        <!-- Assuming you have a list of hospitals available -->
+        {% for department in departments %}
+    <option value="{{ department.id }}">{{ department.dname }}</option>
+{% endfor %}
 
-    
+    </select>
     <input type="submit" value="Enter">
 </form>
 
-<a href="/">
+<a href="/patient">
     <button type="button">Go to Home</button>
 </a>
 

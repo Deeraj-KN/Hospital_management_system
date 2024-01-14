@@ -63,10 +63,10 @@
     <div class="container">
         <label for="name">Name:{{ patient.name }}</label>
         <p></p>
-
-        <label for="hospital">Hospital:{{ patient.hospital.hname }}</label>
+        {% for hospital in patient.hospital.all %}
+        <label for="hospital">Hospital:{{ hospital.hname }}</label>
         <p></p>
-
+        {% endfor %}
         <label for="disease">Disease:{{ patient.disease }}</label>
         <p></p>
 
@@ -80,7 +80,7 @@
         <p></p>
     </div>
 {% endfor %}
-<a href="/">
+<a href="/patient">
   <button type="button">Go to Home</button>
 </a>
 </body>

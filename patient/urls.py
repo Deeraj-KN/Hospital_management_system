@@ -7,13 +7,17 @@ from .views import DepartmentManagementView, PatientManagementView, PatientStatu
 from .views import VisitListView1
 from .views import VisitListView2,AddHospitalAPIView,AddPatientAPIView
 from .views import PatientInputView,PatientInputView2,PatientInfoView,PatientInfoView_all,create_patient,list_patient
+
+
+from .views import HomeApiView
 urlpatterns = [
     path('', views.home, name='home'),
     path('addhospital',views.addhospital, name='addhospital'),
     path('addpatient',views.addpatient, name='addpatient'),
     path('displayhospitals',views.displayhospitals, name='displayhospitals'),
     path('displaypatients',views.displaypatients, name='displaypatients'),
-
+    #implementing api views
+    #path('', HomeApiView.as_view(), name='home'),
 
 
     #api views 
@@ -32,5 +36,10 @@ urlpatterns = [
     # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
     path('patient/create/',create_patient,name='create_patient'),
-    path('patients/',list_patient,name='list_patient')
+    path('patients/',list_patient,name='list_patient'),
+
+
+
+
+    
 ]   
