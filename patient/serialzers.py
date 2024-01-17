@@ -1,6 +1,6 @@
 
 from rest_framework import serializers
-from .models import Hospital, Department, Patient
+from .models import Hospital, Department, Patient,History
 
 class HospitalSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,8 +26,8 @@ class PatientSerializer1(serializers.ModelSerializer):
         fields = (
             'status', 'name'
         )
-class PatientSerializer2(serializers.ModelSerializer):
+class HistorySerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = Patient
+        model = History
         fields = '__all__'
