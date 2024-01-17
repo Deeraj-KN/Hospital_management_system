@@ -61,23 +61,23 @@
 
 {% for patient in patients %}
     <div class="container">
-        <label for="name">Name:{{ patient.name }}</label>
+        <label for="name">Name:{{ patient_name }}</label>
         <p></p>
-        {% for hospital in patient.hospital.all %}
+        <!-- {% for hospital in patient.hospital.all %}
         <label for="hospital">Hospital:{{ hospital.hname }}</label>
         <p></p>
-        {% endfor %}
-        <label for="disease">Disease:{{ patient.disease }}</label>
+        {% endfor %} -->
+        <label for="Date">Date:{{ patient.date }}</label>
+        <p></p>
+        <label for="hospital">hospital:{{ patient.hospital}}</label>
         <p></p>
 
-        <label for="doctor_name">Doctor Name:{{ patient.doctor_name }}</label>
+        <label for="number">Number:{{ patient.ph_number }}</label>
         <p></p>
 
-        <label for="status">Status:{{ patient.status }}</label>
-        <p></p>
+        
 
-        <label for="medication_remarks">Medication Remarks:{{ patient.medication_remarks }}</label>
-        <p></p>
+        
     </div>
 {% endfor %}
 <a href="/patient">

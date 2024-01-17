@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 # Create your views here.
 def signup(request):
     if request.method == 'POST':
@@ -27,7 +28,7 @@ def signin(request):
         password = request.POST['password']
         user=auth.authenticate(username=username, password=password)
         if user is not None:
-            auth.login(request,user)
+            login(request,user)
             return redirect('/patient')
         else:
             messages.info(request,'Authentication failed')

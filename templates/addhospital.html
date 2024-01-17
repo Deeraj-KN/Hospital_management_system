@@ -73,11 +73,11 @@
     <h2>Add Hospital</h2>
 </div>
 
-<form id="post-form" method="POST" action="addhospital">
+<form id="post-form" method="POST" action="{% url 'addhospital' %}">
     {% csrf_token %}
 
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" required>
+    <input type="text" name="hname" id="hname" required>
 
     <label for="hospital">Address Of Hospital</label>
     <input type="text" name="address" id="address" required>

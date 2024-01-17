@@ -8,7 +8,7 @@ class PatientSerializer(serializers.ModelSerializer):
         fields = (
             'status', 'name'
         )
-class PatientSerializer2(serializers.ModelSerializer):
+class HistorySerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Patient
